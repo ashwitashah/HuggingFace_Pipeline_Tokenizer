@@ -73,5 +73,15 @@ print(response_deepseek)
 print(f"\n[Response Time for deepseek: {end_deepseek - start_deepseek:.2f} seconds]")
 print(f"\n[Response Time for llama: {end_llama - start_llama:.2f} seconds]")
 
+#compare both response time and give insights on which model is faster and by how much.
+llama_time = end_llama - start_llama
+deepseek_time = end_deepseek - start_deepseek
+if llama_time < deepseek_time:
+    print(f"\nLLAMA-3.1-8B-INSTRUCT is faster than DEEPSEEK-V3 by {deepseek_time - llama_time:.2f} seconds.")
+elif deepseek_time < llama_time:
+    print(f"\nDEEPSEEK-V3 is faster than LLAMA-3.1-8B-INSTRUCT by {llama_time - deepseek_time:.2f} seconds.")
+else:
+    print("\nBoth models have the same response time.")
+
 
 
